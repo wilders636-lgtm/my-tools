@@ -1,0 +1,255 @@
+body {
+font-family: Arial;
+background-color: #f4f4f4;
+padding: 40px;
+}
+h1 {
+color: #333;
+
+}
+
+ul {
+list-style-type: none;
+padding: 0;
+
+}
+
+li {
+
+background: white;
+margin: 10px 0;
+padding: 15px;
+border-radius: 6px;
+
+}
+
+a {
+text-decoration: none;
+font-weight: bold;
+color: #2a7ae2;
+}
+
+li:hover {
+background: #e8f0fe;
+}
+
+.budget-box {
+
+background: white;
+padding: 20px;
+border-radius: 8px;
+max-width: 400px;
+
+}
+
+input {
+
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+
+}
+
+button {
+
+padding: 10px;
+background: #2a7ae2;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+
+}
+
+button:hover {
+
+background: #183358;
+
+}
+
+/* Nutrition calculator input sizing */
+
+.nutrition-box input[type="number"]{
+width:120px;
+padding:6px;
+margin:4px 6px 10px 0;
+}
+
+.nutrition-box select{
+width:140px;
+padding:6px;
+margin:4px 6px 10px 0;
+}
+
+.nutrition-box label{
+display:block;
+margin-top:10px;
+font-weight:bold;
+}
+
+/* Height inputs side-by-side */
+
+#feet,
+#inches{
+width:70px;
+}
+
+/* Tool input sizing for ALL tools */
+
+input[type="number"],
+input[type="text"],
+select {
+
+width:120px;
+padding:6px;
+margin:4px 6px 10px 0;
+
+}
+
+/* Labels look cleaner above inputs */
+
+label{
+display:block;
+margin-top:10px;
+font-weight:bold;
+}
+
+/* Smaller height inputs */
+
+#feet,
+#inches{
+width:70px;
+}
+
+/* Center the page content */
+
+body{
+
+font-family: Arial, sans-serif;
+background:#f4f4f4;
+text-align:center;
+
+}
+
+/* Tool card container */
+
+.tool-box{
+
+background:white;
+border:1px solid #ddd;
+border-radius:8px;
+
+width:320px;
+
+margin:20px auto;
+padding:20px;
+
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+
+}
+
+/* Inputs */
+
+input[type="number"],
+input[type="text"],
+select{
+
+width:120px;
+padding:6px;
+margin:5px;
+
+}
+
+/* Smaller height inputs */
+
+#feet,
+#inches{
+
+width:70px;
+
+}
+
+/* Buttons */
+
+button{
+
+padding:8px 16px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#1a5dc9;
+
+}
+
+/* Center Budget Tracker inputs */
+.budget-box {
+    background:white;
+    border:1px solid #ddd;
+    border-radius:8px;
+    width:320px;
+    margin:20px auto;
+    padding:20px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    text-align:center;  /* This centers the content inside the box */
+}
+
+/* Inputs inside budget-box */
+.budget-box input[type="number"] {
+    width:120px;
+    padding:6px;
+    margin:5px;
+    display:inline-block;  /* ensures they respect text-align:center */
+}
+
+/* Buttons styling */
+.budget-box button {
+    padding:8px 16px;
+    background:#2c7be5;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.budget-box button:hover {
+    background:#1a5dc9;
+}
+
+/* Page background */
+/* Make the entire page background a single color */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f4f8; /* choose any solid color you like */
+    margin: 0;
+    padding: 40px;
+}
+
+/* Result panel for Side Job Income Tracker */
+#incomeResult {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    background: #f1f3f5;   /* subtle light gray background */
+    border: 1px solid #ccc;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;   /* shrink to fit content */
+    min-width: 150px;        /* optional, ensures width is reasonable */
+}
+
+/* Tool icons (for homepage and tool pages) */
+.tool-icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto 10px auto;
+}

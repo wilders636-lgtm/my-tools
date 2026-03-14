@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<title>Nutrition & Macro Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1><i class="fa-solid fa-dumbbell"></i> Nutrition Calculator</h1>
+
+
+<p>Calculate your daily calories, protein, fat, and carbs for muscle building or healthy maintenance.</p>
+
+<div class="nutrition-box">
+
+<label>Age</label>
+<input id="age" type="number">
+
+<label>Sex</label>
+<select id="sex">
+<option value="">Select</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+
+<label>Height</label>
+<input id="feet" type="number" placeholder="Feet">
+<input id="inches" type="number" placeholder="Inches">
+
+<label>Weight (pounds)</label>
+<input id="weight" type="number">
+
+<label>Neck Circumference (inches, optional)</label>
+<input id="neck" type="number">
+
+<label>Waist Circumference (inches, optional)</label>
+<input id="waist" type="number">
+
+<label>Activity Level</label>
+<select id="activity">
+<option value="">Select</option>
+<option value="1.2">Sedentary</option>
+<option value="1.375">Lightly Active</option>
+<option value="1.55">Moderately Active</option>
+<option value="1.725">Very Active</option>
+</select>
+
+<label>Goal</label>
+<select id="goal">
+<option value="">Select</option>
+<option value="lose">Lose Weight</option>
+<option value="maintain">Maintain Weight</option>
+<option value="gain">Gain Muscle</option>
+</select>
+
+<label>Target Weight (pounds, optional)</label>
+<input id="targetWeight" type="number">
+
+<br><br>
+
+<button onclick="calculateNutrition()">Calculate</button>
+
+</div>
+
+<h2 id="nutritionResult"></h2>
+
+<!-- Recipe previews go here -->
+<div id="recipeContainer" style="display:flex; gap:20px; flex-wrap:wrap;"></div>
+
+<script src="nutrition.js"></script>
+</body>
+</html>
