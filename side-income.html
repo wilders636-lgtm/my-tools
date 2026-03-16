@@ -3,11 +3,22 @@
 <head>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+
+<!-- Home button top-left -->
+<a href="index.html" class="home-btn">Home</a>
+
+<!-- Dropdown menu top-right -->
+<div class="tool-menu">
+    <button class="dropbtn">Other Tools <i class="fa-solid fa-caret-down"></i></button>
+    <div class="dropdown-content">
+        <a href="budget-tracker.html">Budget Tracker</a>
+        <a href="nutrition-calculator.html">Nutrition & Macro Calculator</a>
+    </div>
+</div>
 
 <h1><i class="fa-solid fa-wallet"></i> Side Job Income Tracker</h1>
 <p>Track how much you make from your second job or side hustle.</p>
@@ -22,21 +33,19 @@
 
     <label for="state">State (optional)</label>
     <select id="state">
-    <option value="">Select</option>
-    <option value="CA">California - 10%</option>
-    <option value="TX">Texas - 0%</option>
-    <option value="NY">New York - 6%</option>
-    <option value="PA">Pennsylvania - 3%</option>
-    <option value="FL">Florida - 0%</option>
-</select>
+        <option value="">Select</option>
+        <option value="CA">California - 10%</option>
+        <option value="TX">Texas - 0%</option>
+        <option value="NY">New York - 6%</option>
+        <option value="PA">Pennsylvania - 3%</option>
+        <option value="FL">Florida - 0%</option>
+    </select>
 
-<label for="localTax">Local/District Tax % (optional)</label>
-<input type="number" id="localTax" placeholder="e.g. 2">
+    <label for="localTax">Local/District Tax % (optional)</label>
+    <input type="number" id="localTax" placeholder="e.g. 2">
 
-<button onclick="calculateIncome()">Calculate Total Pay</button>
-
+    <button onclick="calculateIncome()">Calculate Total Pay</button>
     
-
 </div>
 
 <h2 id="incomeResult"></h2>
