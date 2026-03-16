@@ -1,4 +1,5 @@
 function calculateNutrition() {
+
     let age = Number(document.getElementById("age").value)
     let feet = Number(document.getElementById("feet").value)
     let inches = Number(document.getElementById("inches").value)
@@ -32,16 +33,26 @@ function calculateNutrition() {
     let bodyFatText = "Not calculated"
     if (neck > 0 && waist > 0) {
         let bodyFat = 0
-        if (sex === "male") bodyFat = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(totalInches) + 36.76
-        if (sex === "female") bodyFat = 163.205 * Math.log10(waist + neck) - 97.684 * Math.log10(totalInches) - 78.387
+
+        if (sex === "male")
+            bodyFat = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(totalInches) + 36.76
+
+        if (sex === "female")
+            bodyFat = 163.205 * Math.log10(waist + neck) - 97.684 * Math.log10(totalInches) - 78.387
+
         bodyFatText = Math.round(bodyFat) + "%"
     }
 
     let weeksToGoal = "N/A"
+
     if (targetWeight > 0) {
         let difference = targetWeight - weight
-        if (goal === "lose") weeksToGoal = Math.abs(difference)
-        if (goal === "gain") weeksToGoal = Math.abs(difference) * 2
+
+        if (goal === "lose")
+            weeksToGoal = Math.abs(difference)
+
+        if (goal === "gain")
+            weeksToGoal = Math.abs(difference) * 2
     }
 
     document.getElementById("nutritionResult").innerHTML =
@@ -52,46 +63,87 @@ function calculateNutrition() {
         "Estimated Body Fat: " + bodyFatText + "<br>" +
         "Estimated Time To Reach Goal: " + weeksToGoal + " weeks"
 
-    // ----- Curated recipe previews -----
+
+    // ---------- RECIPES ----------
+
     const recipes = [
+
         {
             title: "Grilled Chicken Salad",
             image: "https://images.unsplash.com/photo-1604908177522-58d0a90a4c7c?auto=format&fit=crop&w=400&q=80",
             link: "https://www.allrecipes.com/recipe/279361/healthy-chicken-breast/"
         },
+
         {
-            title: "Quinoa & Veggie Bowl",
+            title: "Quinoa Veggie Bowl",
             image: "https://images.unsplash.com/photo-1612197521606-02c4f43dfd4f?auto=format&fit=crop&w=400&q=80",
             link: "https://www.eatingwell.com/recipe/276332/quinoa-veggie-bowl/"
         },
+
         {
-            title: "Salmon with Steamed Veggies",
+            title: "Salmon and Vegetables",
             image: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=400&q=80",
             link: "https://www.allrecipes.com/recipe/240208/salmon-with-steamed-vegetables/"
+        },
+
+        {
+            title: "Chicken Burrito Bowl",
+            image: "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=400&q=80",
+            link: "https://www.eatingwell.com/recipe/250222/chicken-burrito-bowl/"
+        },
+
+        {
+            title: "Avocado Tuna Salad",
+            image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80",
+            link: "https://www.allrecipes.com/recipe/258844/avocado-tuna-salad/"
+        },
+
+        {
+            title: "Greek Chickpea Salad",
+            image: "https://images.unsplash.com/photo-1604908177520-4329c5a56f7d?auto=format&fit=crop&w=400&q=80",
+            link: "https://www.eatingwell.com/recipe/276923/mediterranean-chickpea-salad/"
         }
+
     ]
 
+
     const container = document.getElementById("recipeContainer")
-    container.innerHTML = "" // clear previous recipes
 
-    recipes.forEach(r => {
-        const card = document.createElement("div")
-        card.style.border = "1px solid #ccc"
-        card.style.padding = "10px"
-        card.style.width = "200px"
-        card.style.textAlign = "center"
+    container.innerHTML = ""
 
-        const img = document.createElement("img")
-        img.src = r.image
-        img.style.width = "100%"
-        img.style.height = "auto"
-        img.style.borderRadius = "5px"
 
-        const title = document.createElement("p")
-        title.innerHTML = `<a href="${r.link}" target="_blank">${r.title}</a>`
+    recipes
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3)
+        .forEach(r => {
 
-        card.appendChild(img)
-        card.appendChild(title)
-        container.appendChild(card)
-    })
+            const card = document.createElement("div")
+
+            card.style.border = "1px solid #ccc"
+            card.style.padding = "10px"
+            card.style.width = "200px"
+            card.style.textAlign = "center"
+
+
+            const img = document.createElement("img")
+
+            img.src = r.image
+            img.style.width = "100%"
+            img.style.height = "auto"
+            img.style.borderRadius = "5px"
+
+
+            const title = document.createElement("p")
+
+            title.innerHTML =
+                `<a href="${r.link}" target="_blank">${r.title}</a>`
+
+
+            card.appendChild(img)
+            card.appendChild(title)
+
+            container.appendChild(card)
+
+        })
+
 }
