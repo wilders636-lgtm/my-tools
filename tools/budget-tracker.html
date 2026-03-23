@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<link rel="stylesheet" href="tools/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="page-header">
+    <h1><i class="fa-solid fa-dollar-sign"></i> Budget Tracker</h1>
+    <p>Track your income and expenses to see how much money you have left each month.</p>
+
+</div>
+
+<style>
+body{
+    font-family: Arial;
+}
+</style>
+
+</head>
+
+<body class="budget-page">
+
+<!-- Home button top-left -->
+<a href="index.html" class="home-btn">
+    <i class="fa-solid fa-house"></i>
+</a>
+
+<!-- Dropdown menu top-right -->
+<div class="tool-menu">
+    <button class="dropbtn">        
+        <span class="outlined-text">Other Tools</span>
+        <i class="fa-solid fa-caret-down"></i></button>
+    <div class="dropdown-content">
+        <a href="tools/budget-tracker.html">Budget Tracker</a>
+        <a href="side-income.html">Side Job Income Tracker</a>
+        <a href="nutrition-calculator.html">Nutrition & Macro Calculator</a>
+        <a href="password-generator.html">Password Generator</a>    
+    </div>
+</div>
+
+<div class="budget-box">
+
+<label>Monthly Income</label>
+<input id="income" type="number">
+
+<h2>Expenses</h2>
+
+<label>Rent</label>
+<input id="rent" type="number">
+
+<label>Food</label>
+<input id="food" type="number">
+
+<label>Utilities</label>
+<input id="utilities" type="number">
+
+<label>Dining Out</label>
+<input id="dining" type="number">
+
+<label>Personal Use</label>
+<input id="personal" type="number">
+
+<label>Clothing</label>
+<input id="clothing" type="number">
+
+<label>Savings</label>
+<input id="savings" type="number">
+
+<br><br>
+
+<button onclick="calculateBudget()">Calculate</button>
+
+</div>
+
+<h2 id="expenses"></h2>
+<h2 id="result"></h2>
+
+<script src="tools/budget.js"></script>
+
+</body>
+</html>
