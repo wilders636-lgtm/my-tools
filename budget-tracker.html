@@ -21,6 +21,8 @@ body{
 
 <body class="budget-page">
 
+<div class="top-header"></div>
+
 <!-- Home button top-left -->
 <a href="index.html" class="home-btn">
     <i class="fa-solid fa-house"></i>
@@ -78,6 +80,25 @@ body{
 <h2 id="result"></h2>
 
 <script src="budget.js"></script>
+
+<script>
+let lastScroll = 0;
+const header = document.querySelector(".top-header");
+
+window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+        // scrolling DOWN
+        header.classList.add("hide");
+    } else {
+        // scrolling UP
+        header.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+});
+</script>
 
 </body>
 </html>

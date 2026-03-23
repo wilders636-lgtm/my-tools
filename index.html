@@ -12,6 +12,28 @@
 </head>
 
 <body>
+
+<div class="top-header">
+
+    <a href="index.html" class="home-btn">
+        <i class="fa-solid fa-house"></i>
+    </a>
+
+    <div class="tool-menu">
+        <button class="dropbtn">
+            <span class="outlined-text">Other Tools</span>
+            <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+            <a href="budget-tracker.html">Budget Tracker</a>
+            <a href="side-income.html">Side Job Income Tracker</a>
+            <a href="nutrition-calculator.html">Nutrition & Macro Calculator</a>
+            <a href="password-generator.html">Password Generator</a>    
+    </div>
+    </div>
+
+</div>
 <a href="index.html" class="home-btn">
 <i class="fa-solid fa-house"></i>
 </a>
@@ -43,7 +65,7 @@
 </div>
 
 <div class="tool-box">
-<h3>Password Generator</h3>
+<h3><i class="fa-solid fa-key"></i>Password Generator</h3>
 <p>Create secure random passwords instantly.</p>
 
 <a href="password-generator.html">
@@ -56,6 +78,25 @@
   <!-- Google AdSense will go here later -->
   <p>Free Money & Knowledge Tools</p>
 </div>
+
+<script>
+let lastScroll = 0;
+const header = document.querySelector(".top-header");
+
+window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+        // scrolling DOWN
+        header.classList.add("hide");
+    } else {
+        // scrolling UP
+        header.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+});
+</script>
 
 </body>
 
