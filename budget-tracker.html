@@ -5,7 +5,11 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<h1><i class="fa-solid fa-dollar-sign"></i> Budget Tracker</h1>
+<div class="page-header">
+    <h1><i class="fa-solid fa-dollar-sign"></i> Budget Tracker</h1>
+    <p>Track your income and expenses to see how much money you have left each month.</p>
+
+</div>
 
 <style>
 body{
@@ -15,21 +19,25 @@ body{
 
 </head>
 
-<body>
+<body class="budget-page">
 
 <!-- Home button top-left -->
-<a href="index.html" class="home-btn">Home</a>
+<a href="index.html" class="home-btn">
+    <i class="fa-solid fa-house"></i>
+</a>
 
 <!-- Dropdown menu top-right -->
 <div class="tool-menu">
-    <button class="dropbtn">Other Tools <i class="fa-solid fa-caret-down"></i></button>
+    <button class="dropbtn">        
+        <span class="outlined-text">Other Tools</span>
+        <i class="fa-solid fa-caret-down"></i></button>
     <div class="dropdown-content">
+        <a href="budget-tracker.html">Budget Tracker</a>
         <a href="side-income.html">Side Job Income Tracker</a>
         <a href="nutrition-calculator.html">Nutrition & Macro Calculator</a>
+        <a href="password-generator.html">Password Generator</a>    
     </div>
 </div>
-
-<p>Track your income and expenses to see how much money you have left each month.</p>
 
 <div class="budget-box">
 

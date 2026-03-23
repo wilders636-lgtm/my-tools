@@ -7,25 +7,33 @@
 
 <title>Nutrition & Macro Calculator</title>
 <link rel="stylesheet" href="style.css">
+
+<div class="page-header">
+    <h1><i class="fa-solid fa-dumbbell"></i> Nutrition Calculator</h1>
+    <p>Calculate your daily calories, protein, fat, and carbs for muscle building or healthy maintenance.</p>
+</div>
+
 </head>
 
-<body>
+<body class="nutrition-page">
 
 <!-- Home button top-left -->
-<a href="index.html" class="home-btn">Home</a>
+<a href="index.html" class="home-btn">
+    <i class="fa-solid fa-house"></i>
+</a>
 
 <!-- Dropdown menu top-right -->
 <div class="tool-menu">
-    <button class="dropbtn">Other Tools <i class="fa-solid fa-caret-down"></i></button>
+    <button class="dropbtn">        
+        <span class="outlined-text">Other Tools</span>
+        <i class="fa-solid fa-caret-down"></i></button>
     <div class="dropdown-content">
         <a href="budget-tracker.html">Budget Tracker</a>
         <a href="side-income.html">Side Job Income Tracker</a>
+        <a href="nutrition-calculator.html">Nutrition & Macro Calculator</a>
+        <a href="password-generator.html">Password Generator</a>    
     </div>
 </div>
-
-<h1><i class="fa-solid fa-dumbbell"></i> Nutrition Calculator</h1>
-
-<p>Calculate your daily calories, protein, fat, and carbs for muscle building or healthy maintenance.</p>
 
 <div class="nutrition-box">
 
@@ -80,7 +88,6 @@
 
 <h2 id="nutritionResult"></h2>
 
-<!-- Recipe previews go here -->
 <div id="recipeContainer" style="display:flex; gap:20px; flex-wrap:wrap;"></div>
 
 <script src="nutrition.js"></script>
