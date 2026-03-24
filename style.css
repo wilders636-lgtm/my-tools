@@ -554,22 +554,36 @@ body.side-income-page::before {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    body {
-        padding: 20px;  /* reduce the top/bottom padding on mobile */
+    html, body {
+        padding: 0;       /* remove extra padding around the page */
+        margin: 0;        /* remove default margin */
+        min-height: 100vh; /* ensure body fills the viewport */
+        box-sizing: border-box;
     }
 
-    .tool-box {
-        margin: 10px auto;  /* smaller spacing between tool cards */
-        padding: 15px;      /* reduce padding inside cards */
+    .top-header {
+        position: fixed; /* keep header behavior consistent */
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
     }
 
-    .budget-box,
-    .nutrition-box {
-        width: 90%;          /* make input containers fit mobile screens */
-        padding: 15px;
+    .tool-box, .budget-box, .nutrition-box {
+        margin: 10px auto;   /* reduce spacing between boxes */
+        padding: 15px;       /* tighter padding */
+        max-width: 90%;      /* fit mobile screen */
     }
 
+    /* Reduce spacing below headings and paragraphs */
     h1, h2, h3, p {
-        margin-bottom: 10px; /* reduce extra spacing below headings */
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    /* Adjust the bottom spacing for your ad-space or footer */
+    .ad-space {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
     }
 }
