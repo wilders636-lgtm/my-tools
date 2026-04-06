@@ -720,3 +720,90 @@ body {
     }
 
 }
+
+.stocks-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* keeps layout tight */
+    margin: 0 auto;    /* centers everything */
+}
+
+/* Left column grows, right is fixed width */
+.stocks-main {
+    flex: 1;
+}
+
+.stocks-side-panel {
+    width: 500px;
+    position: sticky;
+    top: 70px; /* adjust so it sits under your header */
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+/* Autocomplete */
+.autocomplete-list {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.autocomplete-item {
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.autocomplete-item:hover {
+    background: #f0f0f0;
+}
+
+/* Favorites / Recent items */
+.favorite-item,
+.recent-item {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    background: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorite-item:hover,
+.recent-item:hover {
+    background: #f7f7f7;
+}
+
+.favorite-remove {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+}
+
+.favorite-remove:hover {
+    color: #c00;
+}
+
+/* Favorite button on cards */
+.favorite-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #f0b400;
+    font-size: 0.9rem;
+}

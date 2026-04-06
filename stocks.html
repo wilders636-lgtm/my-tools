@@ -8,6 +8,7 @@
 
 <body>
 
+<!-- Top Header -->
 <div class="top-header">
     <a href="index.html" class="home-btn">
         <span class="outlined-text">Free Tools</span>
@@ -30,37 +31,63 @@
 </div>
 
 <h1>Stock Market Viewer</h1>
-<p>Real-time prices for the top 5 US stocks + search any ticker</p>
-<div class="tool-box">
-    <h3><i class=fa-solid fa-magnifying-glass"></i>Search Stock</h3>
+<p>Real-time prices for the top 5 US stocks + search any ticker or company name.</p>
 
-    <input type="text" id="searchInput" placeholder="Enter ticker(AAPL)">
-    <button onclick="searchStock()">Search</button>
+<div class="stocks-layout">
+    <!-- LEFT COLUMN -->
+    <div class="stocks-main">
+        <!-- Search Box -->
+        <div class="tool-box">
+            <h3><i class="fa-solid fa-magnifying-glass"></i> Search Stock</h3>
 
-    <div id="searchResult"></div>
-</div>
+            <input type="text" id="searchInput" placeholder="Enter ticker or company (e.g. NVDA or Nvidia)" oninput="handleAutocomplete()">
+            <button onclick="searchStock()">Search</button>
 
-<div class="tool-box">
-    <h3><i class="fa-solid fa-chart-line"></i> Top 5 US Stocks</h3>
-    <div id="topStocks"></div>
+            <!-- Autocomplete dropdown -->
+            <div id="autocompleteList" class="autocomplete-list"></div>
+
+            <div id="searchResult"></div>
+        </div>
+
+        <!-- Top 5 Stocks -->
+        <div class="tool-box">
+            <h3><i class="fa-solid fa-chart-line"></i> Top 5 US Stocks</h3>
+            <div id="topStocks"></div>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN (Favorites + Recent) -->
+    <div class="stocks-side-panel">
+        <div class="tool-box">
+            <h3><i class="fa-solid fa-star"></i> Favorites</h3>
+            <div id="favoritesList"></div>
+        </div>
+
+        <div class="tool-box">
+            <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Searches</h3>
+            <div id="recentList"></div>
+        </div>
+    </div>
 </div>
 
 <script src="stocks.js"></script>
+
 <script>
-let lastscroll = 0;
+let lastScroll = 0;
 const header = document.querySelector(".top-header");
 
 window.addEventListener("scroll", () => {
     let currentScroll = window.pageYOffset;
+
     if (currentScroll > lastScroll) {
         header.classList.add("hide");
     } else {
         header.classList.remove("hide");
     }
+
     lastScroll = currentScroll;
 });
 </script>
-
 
 </body>
 </html>
