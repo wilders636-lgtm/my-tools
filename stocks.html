@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Market Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="top-header">
+    <a href="index.html" class="home-btn">
+        <span class="outlined-text">Free Tools</span>
+    </a>
+
+    <div class="tool-menu">
+        <button class="dropbtn">
+            <span class="outlined-text">Other Tools</span>
+            <i class="fa-solid fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+            <a href="budget-tracker.html">Budget Tracker</a>
+            <a href="side-income.html">Side Job Income Tracker</a>
+            <a href="nutrition-calculator.html">Nutrition & Macro Calculator</a>
+            <a href="password-generator.html">Password Generator</a>
+            <a href="discount-calculator.html">Discount Calculator</a>
+        </div>
+    </div>
+</div>
+
+<h1>Stock Market Viewer</h1>
+<p>Real-time prices for the top 5 US stocks + search any ticker</p>
+<div class="tool-box">
+    <h3><i class=fa-solid fa-magnifying-glass"></i>Search Stock</h3>
+
+    <input type="text" id="searchInput" placeholder="Enter ticker(AAPL)">
+    <button onclick="searchStock()">Search</button>
+
+    <div id="searchResult"></div>
+</div>
+
+<div class="tool-box">
+    <h3><i class="fa-solid fa-chart-line"></i> Top 5 US Stocks</h3>
+    <div id="topStocks"></div>
+</div>
+
+<script src="stocks.js"></script>
+<script>
+let lastscroll = 0;
+const header = document.querySelector(".top-header");
+
+window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll) {
+        header.classList.add("hide");
+    } else {
+        header.classList.remove("hide");
+    }
+    lastScroll = currentScroll;
+});
+</script>
+
+
+</body>
+</html>
