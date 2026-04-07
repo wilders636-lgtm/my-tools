@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <title>Free Budget and Income Tools</title>
@@ -29,12 +29,11 @@
             <a href="budget-tracker.html">Budget Tracker</a>
             <a href="side-income.html">Side Job Income Tracker</a>
             <a href="nutrition-calculator.html">Nutrition & Macro Calculator</a>
-            <a href="password-generator.html">Password Generator</a>    
-    </div>
+            <a href="password-generator.html">Password Generator</a>
+        </div>
     </div>
 
 </div>
-
 
 <h1>Free Money & Knowledge Tools</h1>
 
@@ -42,48 +41,86 @@
 
 <hr>
 
-<h2>Available Tools</h2>
+<!-- ===================================================== -->
+<!-- START: Weather + Tools Two-Column Layout -->
+<!-- ===================================================== -->
 
-<div class="tool-box">
-  <h3><i class="fa-solid fa-dollar-sign"></i> Budget Tracker</h3>
-  <p>Track your income and monthly expenses to see how much money you have left.</p>
-  <a href="budget-tracker.html"><button class="btn">Open Tool</button></a>
-</div>
+<div class="home-layout">
 
-<div class="tool-box">
-  <h3><i class="fa-solid fa-wallet"></i> Side Job Income Tracker</h3>
-  <p>Track how much you make from your second job or side hustle.</p>
-  <a href="side-income.html"><button class="btn">Open Tool</button></a>
-</div>
+    <!-- LEFT: Weather Panel -->
+    <div class="weather-panel">
+        <div class="tool-box">
+            <h3><i class="fa-solid fa-cloud-sun"></i> Global Weather</h3>
 
-<div class="tool-box">
-  <h3><i class="fa-solid fa-dumbbell"></i> Nutrition & Macro Calculator</h3>
-  <p>Calculate your daily calories, protein, fat, carbs, and estimate body fat.</p>
-  <a href="nutrition-calculator.html"><button class="btn">Open Tool</button></a>
-</div>
+            <label for="citySelect"><strong>Select a city:</strong></label>
+            <select id="citySelect">
+                <option value="New York,US">New York</option>
+                <option value="London,GB">London</option>
+                <option value="Tokyo,JP">Tokyo</option>
+                <option value="Sydney,AU">Sydney</option>
+                <option value="Dubai,AE">Dubai</option>
+                <option value="Paris,FR">Paris</option>
+                <option value="Toronto,CA">Toronto</option>
+                <option value="Hong Kong,HK">Hong Kong</option>
+            </select>
 
-<div class="tool-box">
-<h3><i class="fa-solid fa-key"></i>Password Generator</h3>
-<p>Create secure random passwords instantly.</p>
+            <div id="weatherDisplay" class="weather-display"></div>
+        </div>
+    </div>
 
-<a href="password-generator.html">
-  <button class="btn">Open Tool</button>
-</a>
-</div>
+    <!-- RIGHT: Main Tools Window -->
+    <div class="tools-main">
 
-<div class="tool-box">
-  <h3>Discount Calculator</h3>
-  <p>Find the final price after a percentage discount.</p>
-  <a href="discount-calculator.html">
-    <button class="btn">Open Tool</button>
-  </a>
-</div>
+        <h2>Available Tools</h2>
 
-<div class="tool-box">
-  <h3><i class="fa-solid fa-chart-line"></i>Stock Market Viewer</h3>
-  <p>View the top 5 US stocks and search any ticker in real time.</p>
-  <a href="stocks.html"><button class="btn">Open Tool</button></a>
-</div>
+        <div class="tool-box">
+          <h3><i class="fa-solid fa-dollar-sign"></i> Budget Tracker</h3>
+          <p>Track your income and monthly expenses to see how much money you have left.</p>
+          <a href="budget-tracker.html"><button class="btn">Open Tool</button></a>
+        </div>
+
+        <div class="tool-box">
+          <h3><i class="fa-solid fa-wallet"></i> Side Job Income Tracker</h3>
+          <p>Track how much you make from your second job or side hustle.</p>
+          <a href="side-income.html"><button class="btn">Open Tool</button></a>
+        </div>
+
+        <div class="tool-box">
+          <h3><i class="fa-solid fa-dumbbell"></i> Nutrition & Macro Calculator</h3>
+          <p>Calculate your daily calories, protein, fat, carbs, and estimate body fat.</p>
+          <a href="nutrition-calculator.html"><button class="btn">Open Tool</button></a>
+        </div>
+
+        <div class="tool-box">
+        <h3><i class="fa-solid fa-key"></i>Password Generator</h3>
+        <p>Create secure random passwords instantly.</p>
+
+        <a href="password-generator.html">
+          <button class="btn">Open Tool</button>
+        </a>
+        </div>
+
+        <div class="tool-box">
+          <h3>Discount Calculator</h3>
+          <p>Find the final price after a percentage discount.</p>
+          <a href="discount-calculator.html">
+            <button class="btn">Open Tool</button>
+          </a>
+        </div>
+
+        <div class="tool-box">
+          <h3><i class="fa-solid fa-chart-line"></i>Stock Market Viewer</h3>
+          <p>View the top 5 US stocks and search any ticker in real time.</p>
+          <a href="stocks.html"><button class="btn">Open Tool</button></a>
+        </div>
+
+    </div> <!-- END tools-main -->
+
+</div> <!-- END home-layout -->
+
+<!-- ===================================================== -->
+<!-- END: Weather + Tools Layout -->
+<!-- ===================================================== -->
 
 <hr>
 
@@ -91,6 +128,8 @@
   <!-- Google AdSense will go here later -->
   <p>Free Money & Knowledge Tools</p>
 </div>
+
+<script src="weather.js"></script>
 
 <script>
 let lastScroll = 0;
@@ -100,10 +139,8 @@ window.addEventListener("scroll", () => {
     let currentScroll = window.pageYOffset;
 
     if (currentScroll > lastScroll) {
-        // scrolling DOWN
         header.classList.add("hide");
     } else {
-        // scrolling UP
         header.classList.remove("hide");
     }
 
