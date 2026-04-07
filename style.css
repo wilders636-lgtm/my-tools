@@ -891,3 +891,47 @@ body, html {
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    .home-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .weather-panel,
+    .tools-main {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-panel {
+        position: static !important;
+        top: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Stack vertically */
+    .home-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Weather panel becomes full width */
+    .weather-panel {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        position: static !important;
+        top: auto !important;
+    }
+
+    /* Tools window becomes full width and centered */
+    .tools-main {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+}
