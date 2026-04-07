@@ -1,5 +1,5 @@
 // ====== CONFIG ======
-const WEATHER_API_KEY = "ff458678d79d27a06b9017d649dc822d"; // <-- replace this
+const WEATHER_API_KEY = "process.env.API_KEY"; // <-- replace this
 const WEATHER_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 // Map of city labels to API query values (matches your <option> values)
